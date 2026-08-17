@@ -300,6 +300,10 @@ def finetune(cfg: FinetuneConfig) -> None:
             smoothened_action_accuracy = sum(recent_action_accuracies) / len(recent_action_accuracies)
             smoothened_l1_loss = sum(recent_l1_losses) / len(recent_l1_losses)
 
+            # [DIAG] Print metrics to console every 50 gradient steps
+            if distributed_state.is_main_process and gradient_step_idx % 50 == 0:
+                print(f"[DIAG step {gradient_step_idx}] loss={smoothened_loss:.3f} acc={smoothened_action_accuracy:.3f} l1={smoothened_l1_loss:.3f}", flush=True)
+
             # Push Metrics to W&B (every 10 gradient steps)
             if distributed_state.is_main_process and gradient_step_idx % 10 == 0:
                 wandb.log(
