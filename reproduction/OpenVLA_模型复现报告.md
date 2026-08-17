@@ -369,14 +369,16 @@ RTX 4090 24GB 上的显存管理：
 
 ### 7.3 代码仓库
 
-[github.com/openvla/openvla](https://github.com/openvla/openvla)（官方仓库）
+**本次复现仓库**：[github.com/tubahao/OpenVLA-Reproduction](https://github.com/tubahao/OpenVLA-Reproduction)
+
+上游官方仓库：[github.com/openvla/openvla](https://github.com/openvla/openvla)
 
 本复现基于官方仓库 commit `c8f03f4`，修改仅涉及：
 
 - `vla-scripts/finetune.py`：LoRA 微调相关调整；
 - `experiments/robot/openvla_utils.py`：微调/评估兼容性调整。
 
-复现代码与复现脚本（微调启动脚本、环境排查脚本、结果解析脚本等）已同步到本次复现的 GitHub 仓库：**https://github.com/<owner>/OpenVLA-Reproduction（仓库创建后补充链接）**。
+复现代码与复现脚本（微调启动脚本、环境排查脚本、结果解析脚本等）已同步到本次复现的 GitHub 仓库：[github.com/tubahao/OpenVLA-Reproduction](https://github.com/tubahao/OpenVLA-Reproduction)，完整内容见仓库 `reproduction/` 目录。
 
 ---
 
